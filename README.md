@@ -1,41 +1,41 @@
 # SyncR
 
-**SyncR** is a server-side SourceMod plugin for Team Fortress 2 jump servers designed to assist with rocket syncs.
+**SyncR** - это серверный SourceMod-плагин для прыжковых серверов Team Fortress 2, предназначенный для синхронизации ракет.
 
-Learning and executing syncs can be tremendously difficult due to lack of rocket visibility while aiming and due to latency effects of the remote server. To mitigate these, the player must adjust the timing but the learning process will be inconsistent and difficult.
+Обучение и выполнение синхронизации может быть крайне затруднено из-за отсутствия видимости ракеты при прицеливании и из-за влияния задержки удаленного сервера. Для их устранения игроку приходится корректировать время, но процесс обучения будет непоследовательным и сложным.
 
-This plugin provides three visual and one audio feedback mechanisms to help with learning:
+Данный плагин предоставляет три визуальных и один звуковой механизмы обратной связи, которые помогают в обучении:
 
-### Visual
-- Rocket time-to-impact is visualized via a colored laser emitted in front of the rocket (green to yellow to red).
-- Player body overlapping with an existing rocket changes the laser to blue, i.e. for triple syncs (cyan to blue).
-- Crit rocket particles are attached to rockets launched in sufficiently close bundles.
-- Player predicted landing positions are visualized as a ring on the ground.
-- Player landing and rocket impact distances are vizualized on the HUD with a chart.
+### Визуальная
+- Время попадания ракеты в цель визуализируется с помощью цветного лазера, излучаемого перед ракетой (зеленый-желтый-красный).
+- При наложении тела игрока на существующую ракету лазер меняется на синий, т.е. для тройной синхронизации (голубой - синий).
+- Частицы критической ракеты прикрепляются к ракетам, запущенным в достаточно тесных связках.
+- Прогнозируемые игроком места приземления визуализируются в виде кольца на земле.
+- Расстояния приземления игрока и падения ракеты визуализируются на HUD в виде графика.
 
-### Audio
-- Firing a rocket in a tight bundle with an existing rocket plays a crit rocket sound accompanying the crit particle effects.  Test trials indicate this feedback to be very satisfying for some learning players.
+### Аудио
+- При запуске ракеты в плотной связке с существующей ракетой воспроизводится звук крит ракеты, сопровождаемый эффектами крит частиц.  По результатам тестирования, такая обратная связь очень нравится некоторым начинающим игрокам.
 
 ## Demonstration videos
 [![YouTube video](https://img.youtube.com/vi/wqNsQ-erCd4/0.jpg)](https://www.youtube.com/watch?v=wqNsQ-erCd4)
 [![YouTube video](https://img.youtube.com/vi/zVh711KY-h4/0.jpg)](https://www.youtube.com/watch?v=zVh711KY-h4)
 
-## Usage
-**SyncR** can be toggled by a player using `/syncr`, while admins with the `slay` flag can toggle for a player using `/setsyncr <name>`.
+## Использование
+**SyncR** может переключаться игроком с помощью `/syncr`, а администраторы с флагом `lay` могут переключаться для игрока с помощью `/setsyncr <имя>`.
 
 ## Server ConVars:
 ```
-syncr_laser [0/1]         - Show colored laser pointer
-syncr_laser_all [0/1]     - Show colored laser pointer of all players using SyncR
-syncr_laser_hide [0/1]    - Hides laser pointers when looking up
-syncr_chart [0/1]         - Show distance to impact chart
-syncr_ring [0/1]          - Show landing prediction ring
-syncr_crit [0/1]          - Show sync crit particle
-syncr_sound [0/1]         - Play sync crit sound
-syncr_rave [0/1]          - Toggles disco/rave lasers for bored admins
+syncr_laser [0/1] - Показывать цветную лазерную указку
+syncr_laser_all [0/1] - Показывать цветные лазерные указатели всех игроков, использующих SyncR
+syncr_laser_hide [0/1] - Скрывать лазерные указатели при взгляде вверх
+syncr_chart [0/1] - Показать график расстояния до удара
+syncr_ring [0/1] - Показать кольцо прогнозирования приземления
+syncr_crit [0/1] - Показать частицу крита синхронизации
+syncr_sound [0/1] - Воспроизвести звук крита синхронизации
+syncr_rave [0/1] - Включить лазеры диско/рейв для скучающих администраторов
 
-syncr_warn_distance [Default: 440.0]   - Imminent rocket impact distance to warn with red
-syncr_threshold [Default: 30.0]        - Distance required between rockets for crit feedback -- Set to 0 to disable
+syncr_warn_distance [Default: 440.0] - Расстояние до места падения ракеты для предупреждения красным цветом
+syncr_threshold [По умолчанию: 30.0] - Расстояние, необходимое между ракетами для получения крита - установите 0, чтобы отключить
 ```
 
 ## Dependencies
