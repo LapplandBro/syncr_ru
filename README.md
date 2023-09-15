@@ -38,6 +38,6 @@ syncr_warn_distance [Default: 440.0] - Расстояние до места па
 syncr_threshold [По умолчанию: 30.0] - Расстояние, необходимое между ракетами для получения крита - установите 0, чтобы отключить
 ```
 
-## Dependencies
-* [SourceMod](https://www.sourcemod.net/) (1.12.0.7038 or newer)
+## Зависимости
+* [SourceMod](https://www.sourcemod.net/) (1.12.0.7038 или новее)
 * [SMLib](https://github.com/bcserv/smlib/tree/transitional_syntax)
